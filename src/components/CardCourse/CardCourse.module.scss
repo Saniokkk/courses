@@ -1,0 +1,26 @@
+.cardCourse {
+  display: flex;
+  flex-direction: column;
+  width: calc((100% - 50px) / 2);
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.pic {
+  max-width: 100%;
+  flex-grow: 1;
+  object-fit: cover;
+  min-height: 300px;
+  height: auto;
+}
+
+.wrapper{
+  padding: 30px;
+}
+
+.title{
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 24px;
+}
+
