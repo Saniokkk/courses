@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { useParams, Link, Outlet, useLocation } from "react-router-dom";
+
 import style from "./CardCourse.module.scss";
 
 function CardCourse({
@@ -10,23 +11,33 @@ function CardCourse({
   previewImageLink,
   meta: { skills },
 }) {
+  const { state } = useLocation();
+
   return (
     <li key={id} className={style.cardCourse}>
-      {/* <Link> */}
-      <img
-        className={style.pic}
-        src={`${previewImageLink}/cover.webp`}
-        alt={title}
-      />
-      <div className={style.wrapper}>
+      <Link to={id} state={state} className={style.linkCourse}>
+        <div className={style.picWrapper}>
+          <img
+            className={style.pic}
+            src={`${previewImageLink}/cover.webp`}
+            alt={title}
+          />
+        </div>
         <h3 className={style.title}>{title}</h3>
-        <p className={style.count}>Count: {lessonsCount}</p>
-        <p className={style.rating}>Rating: {rating}</p>
-        <p className={style.skills}>
-          Skills: {skills ? skills.join(", ") : "is absent"}
-        </p>
-      </div>
-      {/* </Link> */}
+        <div className={style.wrapper}>
+          <p className={style.count}>
+            <span className={style.accentText}>Count:</span>
+            {lessonsCount}
+          </p>
+          <p className={style.rating}>
+            <span className={style.accentText}>Rating:</span> {rating}
+          </p>
+          <p className={style.skills}>
+            <span className={style.accentText}>Skills:</span>{" "}
+            {skills ? skills.join(", ") : "is absent"}
+          </p>
+        </div>
+      </Link>
     </li>
   );
 }

@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import { useState, useEffect, Suspense } from "react";
 import * as API from "./services/API";
-import ListCourses from "./components/ListCourses";
-import { useState, useEffect } from "react";
-import Container from "./components/Container";
+import HomePage from "./components/HomePage";
+import DetailsPage from "./components/DetailsPage";
+
 
 function App() {
   const [token, setToken] = useState("");
@@ -18,16 +19,26 @@ function App() {
     API.getPreviewListCourses().then(setDataCourses);
   }, [token]);
 
-  if (dataCourses.length > 0) {
-    dataCourses.slice(10);
-  }
-  console.log(dataCourses);
   return (
     <>
-      <h1 className="main-title">The best courses</h1>
-      <Container className="App">
-        {dataCourses.length > 0 && <ListCourses data={dataCourses} />}
-      </Container>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <HomePage data={dataCourses} />
+            </Suspense>
+          }
+        ></Route>
+        <Route
+          path="/:courseId"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <DetailsPage />
+            </Suspense>
+          }
+        ></Route>
+      </Routes>
     </>
   );
 }
