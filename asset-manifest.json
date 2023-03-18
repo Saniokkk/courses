@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/courses/static/css/main.0d385c7d.css",
+    "main.js": "/courses/static/js/main.87d2f994.js",
+    "static/js/787.c024d6aa.chunk.js": "/courses/static/js/787.c024d6aa.chunk.js",
+    "static/media/TimesNewRomanPS-BoldMT.woff": "/courses/static/media/TimesNewRomanPS-BoldMT.7a883c8a7d5aa6fdb598.woff",
+    "static/media/TimesNewRomanPSMT.woff": "/courses/static/media/TimesNewRomanPSMT.c354a1cc0ad26aa7368c.woff",
+    "static/media/TimesNewRomanPS-BoldMT.woff2": "/courses/static/media/TimesNewRomanPS-BoldMT.c35a2cde578a2945c442.woff2",
+    "static/media/TimesNewRomanPSMT.woff2": "/courses/static/media/TimesNewRomanPSMT.1d3216f8680e35faee98.woff2",
+    "static/media/Montserrat-Bold.woff": "/courses/static/media/Montserrat-Bold.3155f256200b7d559607.woff",
+    "static/media/Montserrat-SemiBold.woff": "/courses/static/media/Montserrat-SemiBold.411a4d1469b75e0248ff.woff",
+    "static/media/Montserrat-Medium.woff": "/courses/static/media/Montserrat-Medium.2451e96bc4c62e5ad1d0.woff",
+    "static/media/Montserrat-Regular.woff": "/courses/static/media/Montserrat-Regular.4a3d63613a362f90a9e6.woff",
+    "static/media/Montserrat-Light.woff": "/courses/static/media/Montserrat-Light.03bd855a68f1712ffa23.woff",
+    "static/media/Montserrat-Bold.woff2": "/courses/static/media/Montserrat-Bold.d28745f2b8e5c12d3607.woff2",
+    "static/media/Montserrat-SemiBold.woff2": "/courses/static/media/Montserrat-SemiBold.165aed18e64970167ee7.woff2",
+    "static/media/Montserrat-Medium.woff2": "/courses/static/media/Montserrat-Medium.cf734a3745838e63cc2a.woff2",
+    "static/media/Montserrat-Regular.woff2": "/courses/static/media/Montserrat-Regular.4ada7f2f580c676690f0.woff2",
+    "static/media/Montserrat-Light.woff2": "/courses/static/media/Montserrat-Light.fc7d04bd48b77889f527.woff2",
+    "static/media/FilmP3Bold.woff": "/courses/static/media/FilmP3Bold.8cafad07d8603cd17799.woff",
+    "static/media/FilmP3Bold.woff2": "/courses/static/media/FilmP3Bold.395604d05c13a53b99fd.woff2",
+    "index.html": "/courses/index.html",
+    "main.0d385c7d.css.map": "/courses/static/css/main.0d385c7d.css.map",
+    "main.87d2f994.js.map": "/courses/static/js/main.87d2f994.js.map",
+    "787.c024d6aa.chunk.js.map": "/courses/static/js/787.c024d6aa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d385c7d.css",
+    "static/js/main.87d2f994.js"
+  ]
+}
