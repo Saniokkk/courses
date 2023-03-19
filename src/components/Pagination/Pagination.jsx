@@ -1,11 +1,46 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { Loading } from "notiflix/build/notiflix-loading-aio";
 import usePagination from "../hooks/usePagination";
 import ListCourses from "../ListCourses";
 import style from "./Pagination.module.scss";
+import * as API from "../../services/API";
 //add input for specific page
 function Pagination({ data }) {
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [dataCourses, setDataCourses] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        if (!token) {
+          const token = await API.getToken();
+          setToken(token);
+        } else {
+          const data = await API.getPreviewListCourses();
+          setDataCourses(data);
+        }
+      } catch {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [token]);
+  // useEffect(() => {
+  //   try {
+  //     if (!token) {
+  //       API.getToken().then(setToken);
+  //     } else {
+  //       API.getPreviewListCourses().then(setDataCourses);
+  //     }
+  //   } catch (error) {
+  //     setError(true);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }, [token]);
   const {
     firstContentIndex,
     lastContentIndex,
@@ -17,11 +52,23 @@ function Pagination({ data }) {
     totalPages,
   } = usePagination({
     contentPerPage: 10,
-    count: data.length,
+    count: dataCourses?.length,
   });
   return (
     <div className={style.App}>
-      {<>
+      {loading ? (
+        Loading.circle({
+          svgColor: "#ff6b01",
+          cssAnimationDuration: 800,
+        })
+      ) : error ? (
+        <>
+          {Loading.remove()}
+          <h2>Error fetching users</h2>
+        </>
+      ) : (
+        <>
+          {Loading.remove()}
           <div className={style.pagination}>
             <p className={style.text}>
               {page}/{totalPages}
@@ -66,10 +113,10 @@ function Pagination({ data }) {
           <ListCourses
             firstContentIndex={firstContentIndex}
             lastContentIndex={lastContentIndex}
-            data={data}
+            data={dataCourses}
           />
         </>
-      }
+      )}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { useState, useEffect, Suspense } from "react";
+import { Suspense } from "react";
 import { Loading } from "notiflix/build/notiflix-loading-aio";
 import * as API from "./services/API";
 import HomePage from "./components/HomePage";
