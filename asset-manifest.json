@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/courses/static/css/main.d1f25a2e.css",
-    "main.js": "/courses/static/js/main.5e609071.js",
+    "main.css": "/courses/static/css/main.402ec545.css",
+    "main.js": "/courses/static/js/main.339a5211.js",
     "static/js/787.c024d6aa.chunk.js": "/courses/static/js/787.c024d6aa.chunk.js",
     "static/media/TimesNewRomanPS-BoldMT.woff": "/courses/static/media/TimesNewRomanPS-BoldMT.7a883c8a7d5aa6fdb598.woff",
     "static/media/TimesNewRomanPSMT.woff": "/courses/static/media/TimesNewRomanPSMT.c354a1cc0ad26aa7368c.woff",
@@ -20,12 +20,12 @@
     "static/media/FilmP3Bold.woff": "/courses/static/media/FilmP3Bold.8cafad07d8603cd17799.woff",
     "static/media/FilmP3Bold.woff2": "/courses/static/media/FilmP3Bold.395604d05c13a53b99fd.woff2",
     "index.html": "/courses/index.html",
-    "main.d1f25a2e.css.map": "/courses/static/css/main.d1f25a2e.css.map",
-    "main.5e609071.js.map": "/courses/static/js/main.5e609071.js.map",
+    "main.402ec545.css.map": "/courses/static/css/main.402ec545.css.map",
+    "main.339a5211.js.map": "/courses/static/js/main.339a5211.js.map",
     "787.c024d6aa.chunk.js.map": "/courses/static/js/787.c024d6aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1f25a2e.css",
-    "static/js/main.5e609071.js"
+    "static/css/main.402ec545.css",
+    "static/js/main.339a5211.js"
   ]
 }
