@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/courses/static/css/main.0d385c7d.css",
-    "main.js": "/courses/static/js/main.87d2f994.js",
+    "main.js": "/courses/static/js/main.f5d8a409.js",
     "static/js/787.c024d6aa.chunk.js": "/courses/static/js/787.c024d6aa.chunk.js",
     "static/media/TimesNewRomanPS-BoldMT.woff": "/courses/static/media/TimesNewRomanPS-BoldMT.7a883c8a7d5aa6fdb598.woff",
     "static/media/TimesNewRomanPSMT.woff": "/courses/static/media/TimesNewRomanPSMT.c354a1cc0ad26aa7368c.woff",
@@ -21,11 +21,11 @@
     "static/media/FilmP3Bold.woff2": "/courses/static/media/FilmP3Bold.395604d05c13a53b99fd.woff2",
     "index.html": "/courses/index.html",
     "main.0d385c7d.css.map": "/courses/static/css/main.0d385c7d.css.map",
-    "main.87d2f994.js.map": "/courses/static/js/main.87d2f994.js.map",
+    "main.f5d8a409.js.map": "/courses/static/js/main.f5d8a409.js.map",
     "787.c024d6aa.chunk.js.map": "/courses/static/js/787.c024d6aa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0d385c7d.css",
-    "static/js/main.87d2f994.js"
+    "static/js/main.f5d8a409.js"
   ]
 }
