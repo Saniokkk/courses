@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import axios from "axios";
-import usePagination from "./hooks/usePagination";
+import usePagination from "../hooks/usePagination";
+import ListCourses from "../ListCourses";
+import style from "./Pagination.module.scss";
 //add input for specific page
-function App() {
+function Pagination({ data }) {
+  console.log("data: ", data);
+
   const [people, setPeople] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -17,8 +20,8 @@ function App() {
     setPage,
     totalPages,
   } = usePagination({
-    contentPerPage: 15,
-    count: people.length,
+    contentPerPage: 10,
+    count: data.length,
   });
   useEffect(() => {
     (async () => {
@@ -35,17 +38,15 @@ function App() {
     })();
   }, []);
   return (
-    <div className="App">
-      <img src={logo} alt="react logo" />
-      <h1 className="title">usePagination()</h1>
+    <div className={style.App}>
       {loading ? (
         <h2>Loading...</h2>
       ) : error ? (
         <h2>Error fetching users</h2>
       ) : (
         <>
-          <div className="pagination">
-            <p className="text">
+          <div className={style.pagination}>
+            <p className={style.text}>
               {page}/{totalPages}
             </p>
             <button
@@ -85,41 +86,15 @@ function App() {
               &rarr;
             </button>
           </div>
-          <div className="items">
-            {people
-              .slice(firstContentIndex, lastContentIndex)
-              .map((el) => (
-                <div className="item" key={el.uid}>
-                  <img
-                    src={`https://avatars.dicebear.com/api/big-smile/${el.first_name}.svg`}
-                    alt={`${el.username} profile`}
-                    className="item__img"
-                  />
-                  <div className="item__info">
-                    <p className="name">
-                      {el.first_name} {el.last_name}{" "}
-                      <span className="username">(@{el.username})</span>
-                    </p>
-                    <p className="job">{el.employment.title}</p>
-                    <p
-                      className={`status ${
-                        el.subscription.status.toLowerCase() === "active"
-                          ? "success"
-                          : el.subscription.status.toLowerCase() === "blocked"
-                          ? "danger"
-                          : "warn"
-                      }`}
-                    >
-                      {el.subscription.status}
-                    </p>
-                  </div>
-                </div>
-              ))}
-          </div>
+          <ListCourses
+            firstContentIndex={firstContentIndex}
+            lastContentIndex={lastContentIndex}
+            data={data}
+          />
         </>
       )}
     </div>
   );
 }
 
-export default App;
+export default Pagination;
