@@ -5,23 +5,38 @@ import Container from "./../Container/Container";
 
 function DetailsPage() {
   const { state } = useLocation();
-  const [data, setData] = useState(null);
   const courseId = useParams().courseId;
+  const [data, setData] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  // const [] = data;
 
   useEffect(() => {
-    API.getPreviewCourse(courseId).then(setData);
-  }, []);
-
-  useEffect(() => {
-   console.log(data);
-  }, [data]);
-
+    if (!token) {
+      API.getToken().then(setToken);
+    } else {
+      API.getPreviewCourse(courseId).then(setData);
+    }
+  }, [token, courseId]);
 
   return (
     data && (
       <>
         <Container className="App">
-          <div>Receive</div>
+          <h1>{data.title}</h1>
+          <p>{data.description}</p>
+          <div>
+            <video
+              src={data.meta.courseVideoPreview.link}
+              poster={data.previewImageLink}
+              width="640"
+              controls
+              autoplay
+              loop
+              preload="auto"
+            >
+              Your browser does not support the <code>audio</code> element.
+            </video>
+          </div>
         </Container>
       </>
     )
