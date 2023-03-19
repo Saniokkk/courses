@@ -5,11 +5,12 @@ import { Loading } from "notiflix/build/notiflix-loading-aio";
 import * as API from "./services/API";
 import HomePage from "./components/HomePage";
 import DetailsPage from "./components/DetailsPage";
+import Header from "./components/Header";
 
 function App() {
-
   return (
     <>
+      <Header />
       <Routes>
         <Route
           path="/"

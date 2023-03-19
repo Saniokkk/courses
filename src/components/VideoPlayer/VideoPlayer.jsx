@@ -18,8 +18,7 @@ function VideoPlayer({ video }) {
         {video.title}
       </h3>
       <video
-        width="600"
-        height="300"
+        className={style.video}
         controls
         poster={video.previewImageLink}
         onTimeUpdate={handleTimeUpdate}

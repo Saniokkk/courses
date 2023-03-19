@@ -1,5 +1,10 @@
+.video{
+  width: 100%;
+}
 .playerWrapper{
+  width: 700px;
   border: 1px solid;
+  flex-shrink: 1;
 }
 
 .title{
