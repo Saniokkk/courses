@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "./fonts.css";
-
+html {
+  height: 100%;
+}
 body {
   margin: 0;
   font-family: "Inter";
-  background-color: #151515;
+  /* background-color: #151515; */
   background-color: #353333;
-  color: rgb(231, 220, 220);
+  /* color: rgb(231, 220, 220); */
   color: #ffe7e7;
+  height: 100%;
 }
 
 code {
@@ -36,6 +39,10 @@ p + p {
 a {
   text-decoration: none;
   color: currentColor;
+}
+
+.fallback {
+  font-size: 42px;
 }
 
 /* PAGINATION */

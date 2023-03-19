@@ -1,0 +1,17 @@
+.list{
+  padding-left: 40px;
+}
+.item{
+font-size: 18px;
+}
+
+.item+.item{
+  margin-top: 20px;
+}
+
+.title{
+  font-size: 18px;
+}
+.text{
+  font-size: 12px;
+}

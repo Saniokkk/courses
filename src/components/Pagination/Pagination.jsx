@@ -5,11 +5,7 @@ import ListCourses from "../ListCourses";
 import style from "./Pagination.module.scss";
 //add input for specific page
 function Pagination({ data }) {
-  console.log("data: ", data);
 
-  const [people, setPeople] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
   const {
     firstContentIndex,
     lastContentIndex,
@@ -23,28 +19,9 @@ function Pagination({ data }) {
     contentPerPage: 10,
     count: data.length,
   });
-  useEffect(() => {
-    (async () => {
-      try {
-        const data = await axios.get(
-          "https://random-data-api.com/api/users/random_user?size=100"
-        );
-        setPeople(data.data);
-      } catch {
-        setError(true);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  }, []);
   return (
     <div className={style.App}>
-      {loading ? (
-        <h2>Loading...</h2>
-      ) : error ? (
-        <h2>Error fetching users</h2>
-      ) : (
-        <>
+      {<>
           <div className={style.pagination}>
             <p className={style.text}>
               {page}/{totalPages}
@@ -92,7 +69,7 @@ function Pagination({ data }) {
             data={data}
           />
         </>
-      )}
+      }
     </div>
   );
 }
