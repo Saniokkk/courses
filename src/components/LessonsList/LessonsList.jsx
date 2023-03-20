@@ -1,5 +1,5 @@
 import style from "./LessonsList.module.scss";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function LessonsList({ videos, onSelect }) {
   return (

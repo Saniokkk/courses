@@ -5,7 +5,8 @@ import style from "./Course.module.scss";
 
 function Course({ course }) {
   const { lessons } = course;
-  const [currentVideo, setCurrentVideo] = useState(lessons[0]);
+  const sortLessons = lessons.sort((a, b) => a.order - b.order);
+  const [currentVideo, setCurrentVideo] = useState(sortLessons[0]);
 
   const handleVideoSelect = (video) => {
     setCurrentVideo(video);
