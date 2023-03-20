@@ -4,7 +4,7 @@ import usePagination from "../hooks/usePagination";
 import ListCourses from "../ListCourses";
 import style from "./Pagination.module.scss";
 import * as API from "../../services/API";
-//add input for specific page
+
 function Pagination({ data }) {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [dataCourses, setDataCourses] = useState(null);
@@ -28,19 +28,7 @@ function Pagination({ data }) {
       }
     })();
   }, [token]);
-  // useEffect(() => {
-  //   try {
-  //     if (!token) {
-  //       API.getToken().then(setToken);
-  //     } else {
-  //       API.getPreviewListCourses().then(setDataCourses);
-  //     }
-  //   } catch (error) {
-  //     setError(true);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // }, [token]);
+
   const {
     firstContentIndex,
     lastContentIndex,
@@ -70,9 +58,9 @@ function Pagination({ data }) {
         <>
           {Loading.remove()}
           <div className={style.pagination}>
-            <p className={style.text}>
+            {/* <p className={style.text}>
               {page}/{totalPages}
-            </p>
+            </p> */}
             <button
               onClick={prevPage}
               className={`page ${page === 1 && "disabled"}`}

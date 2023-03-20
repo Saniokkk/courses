@@ -1,8 +1,13 @@
 .list{
   padding-left: 40px;
 }
+
+.item::marker{
+  color: #ffd358;
+}
 .item{
 font-size: 18px;
+cursor: pointer;
 }
 
 .item+.item{
@@ -14,4 +19,10 @@ font-size: 18px;
 }
 .text{
   font-size: 12px;
+}
+
+
+.link:hover, 
+.link:focus{
+  color: #9a484d;   
 }

@@ -1,10 +1,11 @@
 .wrapper{
-width: 100%;
-border: 2px solid;
-padding: 30px;
+  position: relative;
+  width: 100%;
+  border: 2px solid;
+  padding: 30px;
   border: 2px solid #5a4f2e;
-    border-radius: 4px;
-    box-shadow: 0px 0px 12px 1px #717169;
+  border-radius: 4px;
+  box-shadow: 0px 0px 12px 1px #717169;
 }
 
 .title{
@@ -12,4 +13,12 @@ padding: 30px;
   font-size: 32px;
   margin-bottom: 30px;
   color: #ffd358;
+}
+
+.toBack{
+  position: absolute;
+  background-color: transparent;
+  color: #ffd358;
+  font-size: 30px;
+  padding: 0 10px;
 }

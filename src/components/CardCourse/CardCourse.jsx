@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useParams, Link, Outlet, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import style from "./CardCourse.module.scss";
 

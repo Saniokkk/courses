@@ -17,22 +17,26 @@ function VideoPlayer({ video }) {
         <span className={style.titleLes}>Lesson #{video.order}</span>
         {video.title}
       </h3>
-      <video
-        className={style.video}
-        controls
-        poster={video.previewImageLink}
-        onTimeUpdate={handleTimeUpdate}
-        onLoadedMetadata={(event) => {
-          setDuration(event.target.duration);
-          const savedTime = localStorage.getItem(video.id);
-          if (savedTime) {
-            event.target.currentTime = savedTime;
-          }
-        }}
-      >
-        <source src={video.link} type="application/x-mpegURL" />
-        Sorry, your browser doesn't support embedded videos.
-      </video>
+      {video.status === "locked" ? (
+        <h3 className={style.locked}>Sorry this video is locked</h3>
+      ) : (
+        <video
+          className={style.video}
+          controls
+          poster={video.previewImageLink}
+          onTimeUpdate={handleTimeUpdate}
+          onLoadedMetadata={(event) => {
+            setDuration(event.target.duration);
+            const savedTime = localStorage.getItem(video.id);
+            if (savedTime) {
+              event.target.currentTime = savedTime;
+            }
+          }}
+        >
+          <source src={video.link} type="application/x-mpegURL" />
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+      )}
     </div>
   );
 }

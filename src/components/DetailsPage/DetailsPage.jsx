@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, Outlet, useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { Loading } from "notiflix/build/notiflix-loading-aio";
 import * as API from "../../services/API";
-import Container from "./../Container/Container";
-import Course from "./../Course/Course";
+import Container from "../Container";
+import Course from "../Course";
 import style from "./DetailsPage.module.scss";
+import BtnToBack from "../BtnToBack/BtnToBack";
 
 function DetailsPage() {
   const { state } = useLocation();
@@ -14,13 +15,6 @@ function DetailsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  // useEffect(() => {
-  //   if (!token) {
-  //     API.getToken().then(setToken);
-  //   } else {
-  //     API.getPreviewCourse(courseId).then(setData);
-  //   }
-  // }, [token, courseId]);
   useEffect(() => {
     (async () => {
       try {
@@ -56,6 +50,7 @@ function DetailsPage() {
           {Loading.remove()}
           <Container>
             <div className={style.wrapper}>
+              <BtnToBack className={style.toBack} />
               <h1 className={style.title}>{data.title}</h1>
               <Course course={data} />
             </div>

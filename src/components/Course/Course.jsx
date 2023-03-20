@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import LessonsList from "../LessonsList/LessonsList";
 import style from "./Course.module.scss";
