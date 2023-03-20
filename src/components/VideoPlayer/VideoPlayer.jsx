@@ -34,7 +34,7 @@ function VideoPlayer({ video }) {
           }}
         >
           <source src={video.link} type="application/x-mpegURL" />
-          Sorry, your browser doesn't support embedded videos.
+          Sorry, your browser doesn't support embedded videos...
         </video>
       )}
     </div>
